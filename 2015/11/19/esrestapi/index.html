@@ -7,8 +7,7 @@
   <meta name="author" content="AtomyLiu">
   
   <meta name="description" content="列出索引名称1curl &#39;http://localhost:9200/_aliases?pretty=1&#39;
-查看所有索引状态1curl &#39;http://localhost:9200/_stats?pretty=1&#39;
-列出集群索引1curl  &#39;http://127.0.0.1:9200/_cat/i">
+查看所有索引状态1curl &#39;http://localhost:9200/_stats?pretty=1&#39;">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -64,6 +63,7 @@
       
         <p>列出索引名称<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http</span>:<span class="comment">//localhost:9200/_aliases?pretty=1'</span></span><br></pre></td></tr></table></figure></p>
 <p>查看所有索引状态<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http</span>:<span class="comment">//localhost:9200/_stats?pretty=1'</span></span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>列出集群索引<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl  <span class="string">'http</span>:<span class="comment">//127.0.0.1:9200/_cat/indices?pretty=1'</span></span><br></pre></td></tr></table></figure></p>
 <p>查看索引大小<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">curl</span> <span class="string">'http://localhost:9200/_cat/indices?bytes=kb'</span></span><br></pre></td></tr></table></figure></p>
 <p>获取所有mapping<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -XGET <span class="string">'http</span>:<span class="comment">//localhost:9200/_mapping?pretty=1'</span></span><br></pre></td></tr></table></figure></p>
