@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>atomyliu&#39;s blog</title>
+  <title>ElasticSearch REST API 集锦 | atomyliu&#39;s blog</title>
   <meta name="author" content="AtomyLiu">
+  
+  <meta name="description" content="列出索引名称1curl &#39;http://localhost:9200/_aliases?pretty=1&#39;
+查看所有索引状态1curl &#39;http://localhost:9200/_stats?pretty=1&#39;
+列出集群索引1curl  &#39;http://127.0.0.1:9200/_cat/i">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="ElasticSearch REST API 集锦"/>
   <meta property="og:site_name" content="atomyliu&#39;s blog"/>
 
   
@@ -42,8 +46,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="elasticsearch">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="elasticsearch">
   
   <div class="post-content">
     <header>
@@ -53,7 +56,7 @@
       
       
   
-    <h1 class="title"><a href="/2015/11/19/esrestapi/">ElasticSearch REST API 集锦</a></h1>
+    <h1 class="title">ElasticSearch REST API 集锦</h1>
   
 
     </header>
@@ -84,6 +87,29 @@
       
         
         
+  
+  <div class="tags">
+    <a href="/tags/REST/">REST</a>, <a href="/tags/api/">api</a>, <a href="/tags/elasticsearch/">elasticsearch</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -91,87 +117,27 @@
 </article>
 
 
+<section id="comment">
+  <h1 class="title">留言</h1>
 
-
-  <article class="elasticsearch">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-19T03:06:39.000Z"><a href="/2015/11/19/esplugins/">2015-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/19/esplugins/">elasticsearch 插件安装</a></h1>
-  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
-    </header>
-    <div class="entry">
-      
-        <p>Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。</p>
-<h3 id="elasticsearch-head_插件">elasticsearch-head 插件</h3><p>首先进入 /elasticsearch/bin 目录，使用命令行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./plugin -<span class="operator"><span class="keyword">install</span> mobz/elasticsearch-<span class="keyword">head</span></span></span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/11/19/esplugins/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="elasticsearch">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-18T06:05:41.000Z"><a href="/2015/11/18/elasticsearch/">2015-11-18</a></time>
-      
+<div class="fb-comments" data-href="http://yoursite.com/2015/11/19/esrestapi/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
-    <h1 class="title"><a href="/2015/11/18/elasticsearch/">elasticsearch 开始</a></h1>
-  
+</section>
 
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://www.elastic.co/">Elasticsearch</a> 来源于作者 <a href="http://www.linkedin.com/in/shaybanon">Shay Banon</a> 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……<br>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/11/18/elasticsearch/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
