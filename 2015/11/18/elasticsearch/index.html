@@ -2,112 +2,79 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
   <title>elasticsearch 开始 | atomyliu&#39;s blog</title>
-  <meta name="author" content="AtomyLiu">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="AtomyLiu">
+  
+  
+    <meta name="description" content="Elasticsearch 来源于作者 Shay Banon 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……">
   
   <meta name="description" content="Elasticsearch 来源于作者 Shay Banon 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elasticsearch 开始">
+<meta property="og:url" content="http://yoursite.com/2015/11/18/elasticsearch/index.html">
+<meta property="og:site_name" content="atomyliu's blog">
+<meta property="og:description" content="Elasticsearch 来源于作者 Shay Banon 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……">
+<meta property="og:updated_time" content="2015-11-19T05:35:57.447Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="elasticsearch 开始">
+<meta name="twitter:description" content="Elasticsearch 来源于作者 Shay Banon 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……">
+  
+    <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="elasticsearch 开始"/>
-  <meta property="og:site_name" content="atomyliu&#39;s blog"/>
-
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-    <meta property="og:image" content="undefined"/>
-  
-
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
   
-
-
-
 </head>
 
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">atomyliu&#39;s blog</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags" title="All the tags.">
-			  <i class="fa fa-tags"></i>Tags
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class="fa fa-user"></i>About
-			</a>
-		  </li>
-		  
-		</ul>
-      </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">atomyliu&#39;s blog</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="elasticsearch">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/11/18/elasticsearch/">
+  <time datetime="2015-11-18T06:05:41.000Z">
+    2015-11-18
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">elasticsearch 开始</h1>
+  
 
-  <div class="container">
-  	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">		
-			<h1> elasticsearch 开始</h1>
-		</div>		
-	
-
-
-
-<div class="row post">
-	<!-- cols -->
-	
-	<div id="top_meta"></div>
-	<div class="col-md-9">
-	
-
-	<!-- content -->
-	<div class="mypage">		
-	  		
-
-	  <p><a href="https://www.elastic.co/" target="_blank" rel="external">Elasticsearch</a> 来源于作者 <a href="http://www.linkedin.com/in/shaybanon" target="_blank" rel="external">Shay Banon</a> 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……<br><a id="more"></a></p>
+  </header>
+  
+  <div class="entry">
+    
+      <p><a href="https://www.elastic.co/" target="_blank" rel="external">Elasticsearch</a> 来源于作者 <a href="http://www.linkedin.com/in/shaybanon" target="_blank" rel="external">Shay Banon</a> 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……<br><a id="more"></a></p>
 <h2 id="一、如何开始">一、如何开始</h2><h3 id="1-1下载Elasticsearch">1.1下载Elasticsearch</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">https:</span><span class="comment">//www.elastic.co/downloads/elasticsearch</span></span><br></pre></td></tr></table></figure>
 <h3 id="1-2运行Elasticsearch">1.2运行Elasticsearch</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bin/elasticsearch</span><br></pre></td></tr></table></figure>
 <h3 id="1-3打开浏览器查看运行结果">1.3打开浏览器查看运行结果</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">http:</span><span class="comment">//localhost:9200</span></span><br></pre></td></tr></table></figure>
@@ -121,115 +88,50 @@
 <p>这个<code>_source</code>里的内容，正是之前写入的数据。</p>
 <h4 id="数据删除">数据删除</h4><p>要删除数据，修改发送的 HTTP 请求方法为 DELETE 即可：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>curl -<span class="constant">XDELETE </span><span class="string">'http://localhost:9201/myindex/test/AVEdgOTcAe4-VLSojoKP'</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="数据更新">数据更新</h4><p>已经写过的数据，同样还是可以修改的。有两种办法，一种是全量提交，即指明<code>_id</code>再发送一次写入请求。<br>另一种是局部更新，使用 <code>/_update</code> 接口：<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ curl -XPOST <span class="string">'http</span>:<span class="comment">//127.0.0.1:9200/myindex/test/AVEdgOTcAe4-VLSojoKP/_update' -d '&#123;</span></span><br><span class="line">    <span class="string">"user"</span>:<span class="string">"atomyliu123"</span>,</span><br><span class="line">    <span class="string">"msg"</span>:<span class="string">"The first message into Elasticsearch"</span></span><br><span class="line">&#125;'</span><br></pre></td></tr></table></figure></p>
-	  
-	</div>
 
-	<div>
-  	<center>
-	<div class="pagination">
-<ul class="pagination">
-	 
-				
-    	<li class="prev"><a href="/2015/11/19/esplugins/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-  		
-
-        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
-
-		
-          <li class="next disabled"><a>下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>
-        
-	
-</ul>
-</div>
-
-    </center>
-	</div>
-	
-	<!-- comment -->
-	
-<section id="comment">
-  <h2 class="title">留言</h2>
-
-  
-</section>
-
-	</div> <!-- col-md-9/col-md-12 -->
-		
-	
-	<div id="side_meta">
-		<div class="col-md-3" id="post_meta"> 
-
-	<!-- date -->
-	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	2015-11-18 
-	</div>
-	
-
-	<!-- categories -->
     
-
-	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/elasticsearch/">elasticsearch<span>2</span></a></li>
-    </ul>
-	</div>
-		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
-
-	</div>
-		
-
-</div><!-- row -->
-
-
-
-	</div>
   </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2015 AtomyLiu
-  
-      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
-</p> </footer>
-</div> <!-- container-narrow -->
-  
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/elasticsearch/">elasticsearch</a>
+  </div>
 
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
 
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
   
-<a id="gotop" href="#">   
-  <span>▲</span> 
-</a>
-
+  &copy; 2015 <a href="/">AtomyLiu</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
+
+
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
 </script>
 
-
-
 </body>
-   </html>
+</html>

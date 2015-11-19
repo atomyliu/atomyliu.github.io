@@ -2,113 +2,86 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
   <title>elasticsearch 插件安装 | atomyliu&#39;s blog</title>
-  <meta name="author" content="AtomyLiu">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+    <meta name="author" content="AtomyLiu">
+  
+  
+    <meta name="description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
+elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
   
   <meta name="description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
 elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
+<meta property="og:type" content="article">
+<meta property="og:title" content="elasticsearch 插件安装">
+<meta property="og:url" content="http://yoursite.com/2015/11/19/esplugins/index.html">
+<meta property="og:site_name" content="atomyliu's blog">
+<meta property="og:description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
+elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
+<meta property="og:image" content="http://yoursite.com/head01.png">
+<meta property="og:image" content="http://yoursite.com/bigdesk01.png">
+<meta property="og:image" content="http://yoursite.com/kopf01.png">
+<meta property="og:updated_time" content="2015-11-19T05:33:53.963Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="elasticsearch 插件安装">
+<meta name="twitter:description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
+elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
+  
+    <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
   
   
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-  <meta property="og:title" content="elasticsearch 插件安装"/>
-  <meta property="og:site_name" content="atomyliu&#39;s blog"/>
-
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
   
-    <meta property="og:image" content="undefined"/>
-  
-
-  
-  
-    <link href="/favicon.png" rel="icon">
-  
-  
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
-  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-  <script src="/js/jquery-2.0.3.min.js"></script>
-
-  <!-- analytics -->
   
-
-
-
 </head>
 
- <body>  
-  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		<span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-	  <a class="navbar-brand" href="/">atomyliu&#39;s blog</a>
-      <div class="collapse navbar-collapse nav-menu">
-		<ul class="nav navbar-nav">
-		  
-		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/tags" title="All the tags.">
-			  <i class="fa fa-tags"></i>Tags
-			</a>
-		  </li>
-		  
-		  <li>
-			<a href="/about" title="About me.">
-			  <i class="fa fa-user"></i>About
-			</a>
-		  </li>
-		  
-		</ul>
-      </div>
-    </div> <!-- container -->
-</nav>
-<div class="clearfix"></div>
+<body>
+  <div class="wrapper">
+    <header id="header">
+  <div class="title">
+    <h1><a href="/">atomyliu&#39;s blog</a></h1>
+    <p><a href="/"></a></p>
+  </div>
+  <nav class="nav">
+    <ul>
+      
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+      
+        <li><a href="/atom.xml">RSS</a></li>
+      
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</header>
+    <div class="content"><article class="elasticsearch">
+  <header>
+    
+      <div class="icon"></div>
+      <a href="/2015/11/19/esplugins/">
+  <time datetime="2015-11-19T03:06:39.000Z">
+    2015-11-19
+  </time>
+</a>
+    
+    
+  
+    <h1 class="title">elasticsearch 插件安装</h1>
+  
 
-  <div class="container">
-  	<div class="content">
-    	 
-
-
-	
-		<div class="page-header">		
-			<h1> elasticsearch 插件安装</h1>
-		</div>		
-	
-
-
-
-<div class="row post">
-	<!-- cols -->
-	
-	<div id="top_meta"></div>
-	<div class="col-md-9">
-	
-
-	<!-- content -->
-	<div class="mypage">		
-	  		
-
-	  <p>Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。</p>
+  </header>
+  
+  <div class="entry">
+    
+      <p>Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。</p>
 <h3 id="elasticsearch-head_插件">elasticsearch-head 插件</h3><p>首先进入 /elasticsearch/bin 目录，使用命令行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./plugin -<span class="operator"><span class="keyword">install</span> mobz/elasticsearch-<span class="keyword">head</span></span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>安装完成后在 /elasticsearch/plugins目录下看到head的文件夹<br>在浏览器中输入<code>http://localhost:9200/_plugin/head/</code>可看到：<br><img src="head01.png"></p>
@@ -117,115 +90,50 @@ elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令�
 <h3 id="kopf_插件">kopf 插件</h3><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./plugin -<span class="keyword">install</span> lmenezes/elasticsearch-kopf</span><br></pre></td></tr></table></figure>
 <p>安装完成后在 /elasticsearch/plugins目录下看到kopf的文件夹<br>在浏览器中输入<code>http://localhost:9200/_plugin/kopf/</code>可看到：</p>
 <h2 id=""><img src="kopf01.png"></h2><p>除了这些属于UI类别的插件外，还有其他许多功能上的插件<br>比如中文分词插件：elasticsearch-analysis-ik<br>比如拼音分词插件：elasticsearch-analysis-pinyin<br>可以同步数据的river插件等。</p>
-	  
-	</div>
 
-	<div>
-  	<center>
-	<div class="pagination">
-<ul class="pagination">
-	 
-		
-          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
-        
-
-        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
-
-		
-		   <li class="next"><a href="/2015/11/18/elasticsearch/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
-        
-	
-</ul>
-</div>
-
-    </center>
-	</div>
-	
-	<!-- comment -->
-	
-<section id="comment">
-  <h2 class="title">留言</h2>
-
-  
-</section>
-
-	</div> <!-- col-md-9/col-md-12 -->
-		
-	
-	<div id="side_meta">
-		<div class="col-md-3" id="post_meta"> 
-
-	<!-- date -->
-	
-	<div class="meta-widget">
-	<i class="fa fa-clock-o"></i>
-	2015-11-19 
-	</div>
-	
-
-	<!-- categories -->
     
-
-	<!-- tags -->
-	
-	<div class="meta-widget">
-	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
-    <ul id="tags" class="tag_box list-unstyled collapse in">	  
-	    
-  <li><a href="/tags/elasticsearch/">elasticsearch<span>2</span></a></li>
-    </ul>
-	</div>
-		
-
-	<!-- toc -->
-	<div class="meta-widget">
-	
-	</div>
-	
-    <hr>
-	
-</div><!-- col-md-3 -->
-
-	</div>
-		
-
-</div><!-- row -->
-
-
-
-	</div>
   </div>
-  <div class="container-narrow">
-  <footer> <p>
-  &copy; 2015 AtomyLiu
-  
-      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
-</p> </footer>
-</div> <!-- container-narrow -->
-  
+  <footer>
+    
+      
+      
+  <div class="tags">
+    <a class="tags-link" href="/tags/elasticsearch/">elasticsearch</a>
+  </div>
 
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
 
+</div>
+  </div>
+  <footer id="footer"><div class="copyright">
   
-<a id="gotop" href="#">   
-  <span>▲</span> 
-</a>
-
+  &copy; 2015 <a href="/">AtomyLiu</a>
+  
+</div>
+<div class="theme-copyright">
+  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
+   | 
+  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script src="/js/scale.fix.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/search.js"></script> 
+
+
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
+  (function($){
+    $('.fancybox').fancybox();
+  })(jQuery);
 </script>
 
-
-
 </body>
-   </html>
+</html>
