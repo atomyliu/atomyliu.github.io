@@ -2,86 +2,66 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
   
   <title>elasticsearch 插件安装 | atomyliu&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  
-    <meta name="author" content="AtomyLiu">
-  
-  
-    <meta name="description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
-elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
+  <meta name="author" content="AtomyLiu">
   
   <meta name="description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
 elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
-<meta property="og:type" content="article">
-<meta property="og:title" content="elasticsearch 插件安装">
-<meta property="og:url" content="http://yoursite.com/2015/11/19/esplugins/index.html">
-<meta property="og:site_name" content="atomyliu's blog">
-<meta property="og:description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
-elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
-<meta property="og:image" content="http://yoursite.com/head01.png">
-<meta property="og:image" content="http://yoursite.com/bigdesk01.png">
-<meta property="og:image" content="http://yoursite.com/kopf01.png">
-<meta property="og:updated_time" content="2015-11-19T05:33:53.963Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="elasticsearch 插件安装">
-<meta name="twitter:description" content="Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。
-elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令行：1./plugin -install mobz/elasticsearch-head">
-  
-    <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
   
   
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="elasticsearch 插件安装"/>
+  <meta property="og:site_name" content="atomyliu&#39;s blog"/>
+
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   
+
 </head>
 
+
 <body>
-  <div class="wrapper">
-    <header id="header">
-  <div class="title">
-    <h1><a href="/">atomyliu&#39;s blog</a></h1>
-    <p><a href="/"></a></p>
-  </div>
-  <nav class="nav">
-    <ul>
-      
-        <li><a href="/">Home</a></li>
-      
-        <li><a href="/archives">Archives</a></li>
-      
-      
-        <li><a href="/atom.xml">RSS</a></li>
-      
-    </ul>
-    <div class="clearfix"></div>
-  </nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">atomyliu&#39;s blog</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
   <div class="clearfix"></div>
-</header>
-    <div class="content"><article class="elasticsearch">
-  <header>
-    
-      <div class="icon"></div>
-      <a href="/2015/11/19/esplugins/">
-  <time datetime="2015-11-19T03:06:39.000Z">
-    2015-11-19
-  </time>
-</a>
-    
-    
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="elasticsearch">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-19T03:06:39.000Z"><a href="/2015/11/19/esplugins/">2015-11-19</a></time>
+      
+      
   
     <h1 class="title">elasticsearch 插件安装</h1>
   
 
-  </header>
-  
-  <div class="entry">
-    
-      <p>Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。</p>
+    </header>
+    <div class="entry">
+      
+        <p>Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。</p>
 <h3 id="elasticsearch-head_插件">elasticsearch-head 插件</h3><p>首先进入 /elasticsearch/bin 目录，使用命令行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./plugin -<span class="operator"><span class="keyword">install</span> mobz/elasticsearch-<span class="keyword">head</span></span></span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>安装完成后在 /elasticsearch/plugins目录下看到head的文件夹<br>在浏览器中输入<code>http://localhost:9200/_plugin/head/</code>可看到：<br><img src="head01.png"></p>
@@ -91,36 +71,93 @@ elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令�
 <p>安装完成后在 /elasticsearch/plugins目录下看到kopf的文件夹<br>在浏览器中输入<code>http://localhost:9200/_plugin/kopf/</code>可看到：</p>
 <h2 id=""><img src="kopf01.png"></h2><p>除了这些属于UI类别的插件外，还有其他许多功能上的插件<br>比如中文分词插件：elasticsearch-analysis-ik<br>比如拼音分词插件：elasticsearch-analysis-pinyin<br>可以同步数据的river插件等。</p>
 
-    
-  </div>
-  <footer>
-    
       
+    </div>
+    <footer>
       
+        
+        
+  
   <div class="tags">
-    <a class="tags-link" href="/tags/elasticsearch/">elasticsearch</a>
+    <a href="/tags/elasticsearch/">elasticsearch</a>
   </div>
 
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
     
-    <div class="clearfix"></div>
-  </footer>
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
 </article>
 
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/2015/11/19/esplugins/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
 </div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/elasticsearch/">elasticsearch</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
   </div>
-  <footer id="footer"><div class="copyright">
+  <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2015 <a href="/">AtomyLiu</a>
+  &copy; 2015 AtomyLiu
   
-</div>
-<div class="theme-copyright">
-  Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>
-   | 
-  Redesign by <a href="http://heroicyang.com/" target="_blank">Heroic Yang</a>
 </div>
 <div class="clearfix"></div></footer>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script src="/js/scale.fix.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 
@@ -130,9 +167,9 @@ elasticsearch-head 插件首先进入 /elasticsearch/bin 目录，使用命令�
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
 <script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-  (function($){
-    $('.fancybox').fancybox();
-  })(jQuery);
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
 </script>
 
 </body>
