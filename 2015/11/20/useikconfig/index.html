@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>atomyliu&#39;s blog</title>
+  <title>ElasticSearch使用elasticsearch-analysis-ik 进阶篇 | atomyliu&#39;s blog</title>
   <meta name="author" content="AtomyLiu">
+  
+  <meta name="description" content="分词配置上一篇我们介绍了如何使用ik分词，这一篇我们讲讲ik分词的高级使用方式。ik分词在作为elasticsearch的分词插件中，目前运用的比较广泛，因此其扩展性也是很强的。下面我们从配置文件来看：elasticsearch-1.7.1\config\elasticsearch.yml12345">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="ElasticSearch使用elasticsearch-analysis-ik 进阶篇"/>
   <meta property="og:site_name" content="atomyliu&#39;s blog"/>
 
   
@@ -42,8 +44,7 @@
 </nav>
 <div class="clearfix"></div></header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="elasticsearch">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="elasticsearch">
   
   <div class="post-content">
     <header>
@@ -53,7 +54,7 @@
       
       
   
-    <h1 class="title"><a href="/2015/11/20/useikconfig/">ElasticSearch使用elasticsearch-analysis-ik 进阶篇</a></h1>
+    <h1 class="title">ElasticSearch使用elasticsearch-analysis-ik 进阶篇</h1>
   
 
     </header>
@@ -77,6 +78,29 @@
       
         
         
+  
+  <div class="tags">
+    <a href="/tags/elasticsearch/">elasticsearch</a>, <a href="/tags/ik/">ik</a>, <a href="/tags/plugin/">plugin</a>, <a href="/tags/分词/">分词</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -84,224 +108,27 @@
 </article>
 
 
+<section id="comment">
+  <h1 class="title">留言</h1>
 
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-19T08:32:33.000Z"><a href="/2015/11/19/howtosearch/">2015-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/19/howtosearch/">howtosearch</a></h1>
-  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="elasticsearch">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-19T08:31:48.000Z"><a href="/2015/11/19/usepinyin/">2015-11-19</a></time>
-      
+<div class="fb-comments" data-href="http://yoursite.com/2015/11/20/useikconfig/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
-    <h1 class="title"><a href="/2015/11/19/usepinyin/">ElasticSearch使用elasticsearch-analysis-pinyin</a></h1>
-  
+</section>
 
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="elasticsearch">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-19T08:31:48.000Z"><a href="/2015/11/19/useik/">2015-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/19/useik/">ElasticSearch使用elasticsearch-analysis-ik</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>感谢Medcl带来的ik分词插件。</br><br>为什么要用ik?</br><br>因为Elasticsearch本身不支持中文分词，使用默认的解析器会把中文分解成单个字，查询的时候很不方便。<br>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/11/19/useik/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="elasticsearch">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-19T08:08:02.000Z"><a href="/2015/11/19/esrestapi/">2015-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/19/esrestapi/">ElasticSearch REST API 集锦</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>列出索引名称<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http</span>:<span class="comment">//localhost:9200/_aliases?pretty=1'</span></span><br></pre></td></tr></table></figure></p>
-<p>查看所有索引状态<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl <span class="string">'http</span>:<span class="comment">//localhost:9200/_stats?pretty=1'</span></span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/11/19/esrestapi/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="elasticsearch">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-19T03:06:39.000Z"><a href="/2015/11/19/esplugins/">2015-11-19</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/19/esplugins/">elasticsearch 插件安装</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Elasticsearch可扩展性很强，插件也相当完善，下面介绍几个常用插件的安装和使用。</p>
-<h3 id="elasticsearch-head_插件">elasticsearch-head 插件</h3><p>首先进入 /elasticsearch/bin 目录，使用命令行：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./plugin -<span class="operator"><span class="keyword">install</span> mobz/elasticsearch-<span class="keyword">head</span></span></span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/11/19/esplugins/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="elasticsearch">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-18T06:05:41.000Z"><a href="/2015/11/18/elasticsearch/">2015-11-18</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/18/elasticsearch/">elasticsearch 开始</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://www.elastic.co/">Elasticsearch</a> 来源于作者 <a href="http://www.linkedin.com/in/shaybanon">Shay Banon</a> 的第一个开源项目 Compass 库，而这个 Java 库最初的目的只是为了给 Shay 当时正在学厨师的妻子做一个菜谱的搜索引擎。2010 年，Elasticsearch 正式发布。至今已经成为 GitHub 上最流行的 Java 项目，不过 Shay 承诺给妻子的菜谱搜索依然没有面世……<br>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/11/18/elasticsearch/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
