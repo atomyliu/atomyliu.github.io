@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>虚拟集群搭建zookeeper环境初探 | atomyliu&#39;s blog</title>
+  <meta name="author" content="AtomyLiu">
+  
+  <meta name="description" content="ZooKeeper是一个分布式开源框架，提供了协调分布式应用的基本服务，它向外部应用暴露一组通用服务——分布式同步（Distributed Synchronization）、命名服务（Naming Service）、集群维护（Group Maintenance）等，简化分布式应用协调及其管理的难度，提供高性能的分布式服务。ZooKeeper本身可以以Standalone模式安装运行，不过它的长处在于通过分布式ZooKeeper集群（一个Leader，多个Follower），基于一定的策略来保证ZooKeeper集群的稳定性和可用性，从而实现分布式应用的可靠性。有关ZooKeeper的介绍，网上很多，也可以参考文章后面，我整理的一些相关链接。下面，我们简单说明一下ZooKeeper的配置。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="虚拟集群搭建zookeeper环境初探"/>
+  <meta property="og:site_name" content="atomyliu&#39;s blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">atomyliu&#39;s blog</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="zookeeper">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-12-03T06:33:04.000Z"><a href="/2015/12/03/zookeeper1/">2015-12-03</a></time>
+      
+      
+  
+    <h1 class="title">虚拟集群搭建zookeeper环境初探</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>ZooKeeper是一个分布式开源框架，提供了协调分布式应用的基本服务，它向外部应用暴露一组通用服务——分布式同步（Distributed Synchronization）、命名服务（Naming Service）、集群维护（Group Maintenance）等，简化分布式应用协调及其管理的难度，提供高性能的分布式服务。ZooKeeper本身可以以Standalone模式安装运行，不过它的长处在于通过分布式ZooKeeper集群（一个Leader，多个Follower），基于一定的策略来保证ZooKeeper集群的稳定性和可用性，从而实现分布式应用的可靠性。<br>有关ZooKeeper的介绍，网上很多，也可以参考文章后面，我整理的一些相关链接。<br>下面，我们简单说明一下ZooKeeper的配置。<br><a id="more"></a></p>
+<h2 id="下载安装">下载安装</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>wget <span class="symbol">http:</span>/<span class="regexp">/mirrors.hust.edu.cn/apache</span><span class="regexp">/zookeeper/zookeeper</span>-<span class="number">3.4</span>.<span class="number">7</span>/zookeeper-<span class="number">3.4</span>.<span class="number">7</span>.tar.gz  <span class="comment"># 下载zookeeper压缩包</span></span><br><span class="line"><span class="variable">$ </span>tar xzcf zookeeper-<span class="number">3.4</span>.<span class="number">7</span>.tar.gz -<span class="constant">C</span> ~<span class="regexp">/zookeeper # 解压缩到主目录zookeeper文件夹</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置zoo-cfg文件">配置zoo.cfg文件</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 心跳间隔时间(ms)</span></span><br><span class="line">tickTime=<span class="number">2000</span></span><br><span class="line"><span class="preprocessor"># Follower与Leader初始化时能容忍的时间(initLimit * tickTime)</span></span><br><span class="line">initLimit=<span class="number">10</span></span><br><span class="line"><span class="preprocessor"># Follower与Leader请求响应时能容忍的时间(syncLimit * tickTime)</span></span><br><span class="line">syncLimit=<span class="number">5</span></span><br><span class="line"><span class="preprocessor"># server1数据目录，每个server各自配置</span></span><br><span class="line">dataDir=~/zookeeper</span><br><span class="line"><span class="preprocessor"># 客户端连接端口</span></span><br><span class="line">clientPort=<span class="number">2181</span></span><br><span class="line"><span class="preprocessor"># server列表:</span></span><br><span class="line"><span class="preprocessor"># .n(标记server)=(server地址):(投票时所用端口):(选举Leader时所用端口)</span></span><br><span class="line">server<span class="number">.1</span>=<span class="number">192.168</span><span class="number">.10</span><span class="number">.10</span>:<span class="number">2888</span>:<span class="number">3888</span></span><br><span class="line">server<span class="number">.2</span>=<span class="number">192.168</span><span class="number">.10</span><span class="number">.11</span>:<span class="number">2888</span>:<span class="number">3888</span></span><br><span class="line">server<span class="number">.3</span>=<span class="number">192.168</span><span class="number">.10</span><span class="number">.12</span>:<span class="number">2888</span>:<span class="number">3888</span></span><br></pre></td></tr></table></figure>
+<p>在<code>~/zookeeper</code>目录下创建myid文件，并标识对应的server<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>vi ~<span class="regexp">/zookeeper/myid</span></span><br></pre></td></tr></table></figure></p>
+<p>在里面输入1 ，测试一下<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cat ~<span class="regexp">/zookeeper/myid</span></span><br><span class="line"><span class="variable">$ </span><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="启动zookeeper">启动zookeeper</h2><p>同时配置其他2台虚拟机环境，然后运行<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./zkServer<span class="class">.sh</span> start-foreground</span><br></pre></td></tr></table></figure></p>
+<p>如果不出问题，会连接上，第一个服务器会显示<code>Follower</code></p>
+<h2 id="客户端连接集群">客户端连接集群</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /zkCli.sh -server <span class="number">192.168</span><span class="number">.10</span><span class="number">.10</span>:<span class="number">2181</span>,<span class="number">192.168</span><span class="number">.10</span><span class="number">.11</span>:<span class="number">2181</span>,<span class="number">192.168</span><span class="number">.10</span><span class="number">.12</span>:<span class="number">2181</span></span><br></pre></td></tr></table></figure>
+<p>这样，一个基本的zookeeper集群建立完成。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/zookeeper/">zookeeper</a>, <a href="/tags/集群/">集群</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/2015/12/03/zookeeper1/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/REST/">REST</a><small>1</small></li>
+  
+    <li><a href="/tags/Vagrant/">Vagrant</a><small>1</small></li>
+  
+    <li><a href="/tags/VirtualBox/">VirtualBox</a><small>1</small></li>
+  
+    <li><a href="/tags/api/">api</a><small>1</small></li>
+  
+    <li><a href="/tags/bigdesk/">bigdesk</a><small>1</small></li>
+  
+    <li><a href="/tags/elasticsearch/">elasticsearch</a><small>6</small></li>
+  
+    <li><a href="/tags/git/">git</a><small>1</small></li>
+  
+    <li><a href="/tags/head/">head</a><small>1</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/ik/">ik</a><small>2</small></li>
+  
+    <li><a href="/tags/kopf/">kopf</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
+  
+    <li><a href="/tags/pinyin/">pinyin</a><small>1</small></li>
+  
+    <li><a href="/tags/plugin/">plugin</a><small>4</small></li>
+  
+    <li><a href="/tags/zookeeper/">zookeeper</a><small>1</small></li>
+  
+    <li><a href="/tags/分词/">分词</a><small>3</small></li>
+  
+    <li><a href="/tags/开发环境/">开发环境</a><small>1</small></li>
+  
+    <li><a href="/tags/虚拟机/">虚拟机</a><small>1</small></li>
+  
+    <li><a href="/tags/集群/">集群</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 AtomyLiu
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
