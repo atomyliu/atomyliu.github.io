@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Vagrant打造跨平台开发环境 | atomyliu&#39;s blog</title>
+  <meta name="author" content="AtomyLiu">
+  
+  <meta name="description" content="Vagrant 是一款用来构建虚拟开发环境的工具，非常适合 php/python/ruby/java 这类语言开发 web 应用，h我们可以通过 Vagrant 封装一个 Linux 的开发环境，分发给团队成员。成员可以在自己喜欢的桌面系统（Mac/Windows/Linux）上开发程序，代码却能统一在封装好的环境里运行。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用Vagrant打造跨平台开发环境"/>
+  <meta property="og:site_name" content="atomyliu&#39;s blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">atomyliu&#39;s blog</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="Vagrant">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-12-03T05:02:04.000Z"><a href="/2015/12/03/vandv/">2015-12-03</a></time>
+      
+      
+  
+    <h1 class="title">使用Vagrant打造跨平台开发环境</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="http://vagrantup.com/" target="_blank" rel="external">Vagrant</a> 是一款用来构建虚拟开发环境的工具，非常适合 php/python/ruby/java 这类语言开发 web 应用，h我们可以通过 Vagrant 封装一个 Linux 的开发环境，分发给团队成员。成员可以在自己喜欢的桌面系统（Mac/Windows/Linux）上开发程序，代码却能统一在封装好的环境里运行。<br><a id="more"></a></p>
+<h2 id="安装_VirtualBox">安装 VirtualBox</h2><p>小巧方便还免费，为什么不用？<br><br>下载地址:<code>https://www.virtualbox.org/wiki/Downloads</code></p>
+<h2 id="安装_Vagrant">安装 Vagrant</h2><p>下载地址：<code>http://downloads.vagrantup.com/</code> <br><br>下载系统镜像:<code>http://www.vagrantbox.es/</code></p>
+<h2 id="向_Vagrant_添加镜像">向 Vagrant 添加镜像</h2><p>打开终端，例如Git bash<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant <span class="built_in">box</span> <span class="built_in">add</span> centos /<span class="built_in">box</span>/precise64.<span class="built_in">box</span></span><br></pre></td></tr></table></figure></p>
+<p><code>centos</code>是给vagrant的box起的名字，后面是镜像的路径。</p>
+<h2 id="初始化环境">初始化环境</h2><p>创建一个目录作为开发目录，并使用<code>centos</code>镜像初始化当前目录。<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cd /myproject         <span class="comment"># 切换目录</span></span><br><span class="line"><span class="variable">$ </span>vagrant init centos   <span class="comment"># 初始化</span></span><br><span class="line"><span class="variable">$ </span>vagrant up            <span class="comment"># 自动环境</span></span><br></pre></td></tr></table></figure></p>
+<p>你会看到终端显示了启动过程，启动完成后，我们就可以用 SSH 登录虚拟机了，剩下的步骤就是在虚拟机里配置你要运行的各种环境和参数了。<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>vagrant ssh  <span class="comment"># SSH 登录</span></span><br></pre></td></tr></table></figure></p>
+<p>从网上下载的虚拟机镜像并不是复合我们的要求，我们会在系统中添加各种环境。设置好后，我们对环境进行打包：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant <span class="package"><span class="keyword">package</span></span></span><br></pre></td></tr></table></figure></p>
+<p>这样，我们就完成了整个开发环境的配置和打包，将打包后的<code>box</code>文件分发给其他人，这样他们就可以使用跟你一模一样的环境了。<br><br>妈妈再也不用担心我的环境不一致。。。</p>
+<h2 id="常用命令">常用命令</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>vagrant init  <span class="comment"># 初始化</span></span><br><span class="line"><span class="variable">$ </span>vagrant up    <span class="comment"># 启动虚拟机</span></span><br><span class="line"><span class="variable">$ </span>vagrant halt  <span class="comment"># 关闭虚拟机</span></span><br><span class="line"><span class="variable">$ </span>vagrant reload  <span class="comment"># 重启虚拟机</span></span><br><span class="line"><span class="variable">$ </span>vagrant ssh     <span class="comment"># SSH 至虚拟机</span></span><br><span class="line"><span class="variable">$ </span>vagrant status  <span class="comment"># 查看虚拟机运行状态</span></span><br><span class="line"><span class="variable">$ </span>vagrant destroy  <span class="comment"># 销毁当前虚拟机</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Vagrant/">Vagrant</a>, <a href="/tags/VirtualBox/">VirtualBox</a>, <a href="/tags/开发环境/">开发环境</a>, <a href="/tags/虚拟机/">虚拟机</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/2015/12/03/vandv/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/REST/">REST</a><small>1</small></li>
+  
+    <li><a href="/tags/Vagrant/">Vagrant</a><small>1</small></li>
+  
+    <li><a href="/tags/VirtualBox/">VirtualBox</a><small>1</small></li>
+  
+    <li><a href="/tags/api/">api</a><small>1</small></li>
+  
+    <li><a href="/tags/bigdesk/">bigdesk</a><small>1</small></li>
+  
+    <li><a href="/tags/elasticsearch/">elasticsearch</a><small>6</small></li>
+  
+    <li><a href="/tags/git/">git</a><small>1</small></li>
+  
+    <li><a href="/tags/head/">head</a><small>1</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/ik/">ik</a><small>2</small></li>
+  
+    <li><a href="/tags/kopf/">kopf</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
+  
+    <li><a href="/tags/pinyin/">pinyin</a><small>1</small></li>
+  
+    <li><a href="/tags/plugin/">plugin</a><small>4</small></li>
+  
+    <li><a href="/tags/分词/">分词</a><small>3</small></li>
+  
+    <li><a href="/tags/开发环境/">开发环境</a><small>1</small></li>
+  
+    <li><a href="/tags/虚拟机/">虚拟机</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 AtomyLiu
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
