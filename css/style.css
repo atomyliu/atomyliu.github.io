@@ -799,6 +799,7 @@ pre .deletion {
 }
 .toc-article {
   background: #eee;
+  padding: 1em;
   position: fixed;
   top: 25em;
   right: 2em;
@@ -808,7 +809,6 @@ pre .deletion {
   font-weight: bold;
 }
 #toc {
-  line-height: 1.1em;
   font-size: 0.8em;
   float: right;
 }
