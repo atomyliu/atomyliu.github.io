@@ -800,7 +800,8 @@ pre .deletion {
 .toc-article {
   background: #eee;
   padding: 1em;
-  position: relative;
+  position: fixed;
+  top: 5em;
   left: 2em;
 }
 .toc-article .toc-title {
