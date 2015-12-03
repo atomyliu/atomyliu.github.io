@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用Git+Hexo搭建自己的博客系统 | atomyliu&#39;s blog</title>
+  <meta name="author" content="AtomyLiu">
+  
+  <meta name="description" content="准备工具
+一个操作系统：windows，Linux，mac都行
+Git
+Node.js 准备工具的安装就不做具体说明了，官网下载安装即可，不同系统使用对应版本。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用Git+Hexo搭建自己的博客系统"/>
+  <meta property="og:site_name" content="atomyliu&#39;s blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">atomyliu&#39;s blog</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="hexo">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-12-03T03:17:10.000Z"><a href="/2015/12/03/gitandhexo/">2015-12-03</a></time>
+      
+      
+  
+    <h1 class="title">使用Git+Hexo搭建自己的博客系统</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="准备工具">准备工具</h2><ol>
+<li>一个操作系统：windows，Linux，mac都行</li>
+<li>Git</li>
+<li>Node.js <br><br>准备工具的安装就不做具体说明了，官网下载安装即可，不同系统使用对应版本。<a id="more"></a>
+<h2 id="安装Hexo">安装Hexo</h2>在任意位置右键，或者桌面点击Git Base，打开Git终端。<br><img src="git1.png"> <br><br>输入以下命令:<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> hexo</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="创建Hexo项目文件夹">创建Hexo项目文件夹</h2><p>安装完成后，使用Git Base进入你喜欢的目录，或者在你喜欢的目录中右键选择Git Bash，并运行以下命令，Hexo会自动添加网站所需所有文件。<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> init</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装Hexo网站所需依赖包">安装Hexo网站所需依赖包</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure>
+<h2 id="在本地运行并查看hexo博客">在本地运行并查看hexo博客</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo <span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<p>然后在浏览器中输入<code>http://localhost:4000</code>就可以访问博客了。</p>
+<h2 id="更改博客主题">更改博客主题</h2><p>主题可以去hexo官网查找，或者直接去git社区搜索，很多。找到合适的主题后，复制git地址，然后执行以下命令<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/hexojs/hexo-theme-light.git themes/light</span><br></pre></td></tr></table></figure></p>
+<p>完成后，修改<code>_config.yml</code>配置文件中的<code>theme</code>属性，将后面的值改为<code>light</code>。再运行上面本地查看博客的命令即可查看到新主题的博客。<br></p>
+<h2 id="在_config-yml配置文件中还有诸多参数设置，详情可以查阅官网说明文档。">在<code>_config.yml</code>配置文件中还有诸多参数设置，详情可以查阅官网说明文档。</h2><h2 id="利用git创建博客">利用git创建博客</h2><p>注册账号不做演示。</p>
+<h2 id="创建Repository">创建Repository</h2><p>创建的时候注意Repository的名字。atomyliu，那么我应该创建的Repository的名字是：atomyliu.github.io。</p>
+<h2 id="配置Hexo">配置Hexo</h2><p>找到你Repository下的<code>SSH</code>或者<code>HTTPS</code>地址，然后复制。编辑hexo项目下的<code>_config.yml</code>,如下所示：<br><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Deployment</span></span><br><span class="line"><span class="preprocessor">## Docs: http:<span class="comment">//hexo.io/docs/deployment.html</span></span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https:<span class="comment">//github.com/atomyliu/atomyliu.github.io</span></span><br></pre></td></tr></table></figure></p>
+<p>然后保存这个文件。<br><br>然后，我们需要安装一个hexo的git插件，在hexo项目目录中运行Git Bash,然后输入<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure></p>
+<p>然后<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">hexo</span> generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
+<p>这样，我们的博客就完全搭建起来了，在浏览器中输入<code>http://atomyliu.github.io</code>就可以访问你的个人博客了。<br><br><br>PS:hexo的命令有简化版<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">g</span> == hexo <span class="keyword">generate</span></span><br><span class="line">hexo <span class="keyword">d</span> == hexo deploy</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo <span class="keyword">n</span> == hexo new</span><br></pre></td></tr></table></figure></p>
+<p>再PS:github里的博客空间是<code>300M</code>，童鞋们不要弄太多哦，另外这个是纯静态的。<br>再再PS：关于git在本地化是需要SSH的问题，参考原有的资料即可，这里不对git做更多的介绍了。<br>再再再就没有PS了….</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/git/">git</a>, <a href="/tags/hexo/">hexo</a>, <a href="/tags/nodejs/">nodejs</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/2015/12/03/gitandhexo/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/REST/">REST</a><small>1</small></li>
+  
+    <li><a href="/tags/api/">api</a><small>1</small></li>
+  
+    <li><a href="/tags/bigdesk/">bigdesk</a><small>1</small></li>
+  
+    <li><a href="/tags/elasticsearch/">elasticsearch</a><small>6</small></li>
+  
+    <li><a href="/tags/git/">git</a><small>1</small></li>
+  
+    <li><a href="/tags/head/">head</a><small>1</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/ik/">ik</a><small>2</small></li>
+  
+    <li><a href="/tags/kopf/">kopf</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
+  
+    <li><a href="/tags/pinyin/">pinyin</a><small>1</small></li>
+  
+    <li><a href="/tags/plugin/">plugin</a><small>4</small></li>
+  
+    <li><a href="/tags/分词/">分词</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 AtomyLiu
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
