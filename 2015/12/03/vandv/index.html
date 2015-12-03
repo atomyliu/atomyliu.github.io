@@ -59,8 +59,13 @@
 
     </header>
     <div class="entry">
+         <!--02-->
+      <div id="toc" class="toc-article">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装_VirtualBox"><span class="toc-text">安装 VirtualBox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装_Vagrant"><span class="toc-text">安装 Vagrant</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#向_Vagrant_添加镜像"><span class="toc-text">向 Vagrant 添加镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化环境"><span class="toc-text">初始化环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li></ol>
+</div>
       
-        <p><a href="http://vagrantup.com/" target="_blank" rel="external">Vagrant</a> 是一款用来构建虚拟开发环境的工具，非常适合 php/python/ruby/java 这类语言开发 web 应用，h我们可以通过 Vagrant 封装一个 Linux 的开发环境，分发给团队成员。成员可以在自己喜欢的桌面系统（Mac/Windows/Linux）上开发程序，代码却能统一在封装好的环境里运行。<br><a id="more"></a></p>
+      <p><a href="http://vagrantup.com/" target="_blank" rel="external">Vagrant</a> 是一款用来构建虚拟开发环境的工具，非常适合 php/python/ruby/java 这类语言开发 web 应用，h我们可以通过 Vagrant 封装一个 Linux 的开发环境，分发给团队成员。成员可以在自己喜欢的桌面系统（Mac/Windows/Linux）上开发程序，代码却能统一在封装好的环境里运行。<br><a id="more"></a></p>
 <h2 id="安装_VirtualBox">安装 VirtualBox</h2><p>小巧方便还免费，为什么不用？<br><br>下载地址:<code>https://www.virtualbox.org/wiki/Downloads</code></p>
 <h2 id="安装_Vagrant">安装 Vagrant</h2><p>下载地址：<code>http://downloads.vagrantup.com/</code> <br><br>下载系统镜像:<code>http://www.vagrantbox.es/</code></p>
 <h2 id="向_Vagrant_添加镜像">向 Vagrant 添加镜像</h2><p>打开终端，例如Git bash<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant <span class="built_in">box</span> <span class="built_in">add</span> centos /<span class="built_in">box</span>/precise64.<span class="built_in">box</span></span><br></pre></td></tr></table></figure></p>
