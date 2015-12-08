@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zsh的安装和使用 | atomyliu&#39;s blog</title>
+  <meta name="author" content="AtomyLiu">
+  
+  <meta name="description" content="近期在捣鼓linux之类，一直用原装自带的bash来作为命令行工具，忽然看到帖子里很多大神各种高大上的终端，极度膜拜，于是小学了一下，在此介绍一下zsh的安装和使用。">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zsh的安装和使用"/>
+  <meta property="og:site_name" content="atomyliu&#39;s blog"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="atomyliu&#39;s blog" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">atomyliu&#39;s blog</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="shell">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-12-08T03:31:00.000Z"><a href="/2015/12/08/usezsh/">2015-12-08</a></time>
+      
+      
+  
+    <h1 class="title">zsh的安装和使用</h1>
+  
+
+    </header>
+    <div class="entry">
+         <!--02-->
+      <div id="toc" class="toc-article">
+    <div class="toc-title">目录</div>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查看当前系统shell"><span class="toc-text">查看当前系统shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看是否有zsh包"><span class="toc-text">查看是否有zsh包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装zsh包"><span class="toc-text">安装zsh包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用命令chsh_-s_/bin/zsh更换shell"><span class="toc-text">使用命令chsh -s /bin/zsh更换shell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装git"><span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装皮肤"><span class="toc-text">安装皮肤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建zsh配置文件"><span class="toc-text">创建zsh配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#更改主题"><span class="toc-text">更改主题</span></a></li></ol>
+</div>
+      
+      <p>近期在捣鼓linux之类，一直用原装自带的bash来作为命令行工具，忽然看到帖子里很多大神各种高大上的终端，极度膜拜，于是小学了一下，在此介绍一下zsh的安装和使用。</p>
+<a id="more"></a>
+<h2 id="查看当前系统shell">查看当前系统shell</h2><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># echo $SHELL</span></span><br><span class="line">/bin/bash</span><br></pre></td></tr></table></figure>
+<p>系统本身默认使用bash，开始替换。</p>
+<h2 id="查看是否有zsh包">查看是否有zsh包</h2><p>使用root权限用户，我用root用户<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># cat <span class="regexp">/etc/</span>shells</span><br><span class="line"><span class="regexp">/bin/</span>sh</span><br><span class="line"><span class="regexp">/bin/</span>bash</span><br><span class="line"><span class="regexp">/sbin/</span>nologin</span><br><span class="line"><span class="regexp">/bin/</span>dash</span><br><span class="line"><span class="regexp">/bin/</span>tcsh</span><br><span class="line"><span class="regexp">/bin/</span>csh</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装zsh包">安装zsh包</h2><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># yum -y install zsh</span></span><br></pre></td></tr></table></figure>
+<p>安装后再次查看<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># cat <span class="regexp">/etc/</span>shells</span><br><span class="line"><span class="regexp">/bin/</span>sh</span><br><span class="line"><span class="regexp">/bin/</span>bash</span><br><span class="line"><span class="regexp">/sbin/</span>nologin</span><br><span class="line"><span class="regexp">/bin/</span>dash</span><br><span class="line"><span class="regexp">/bin/</span>tcsh</span><br><span class="line"><span class="regexp">/bin/</span>csh</span><br><span class="line"><span class="regexp">/bin/</span>zsh</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用命令chsh_-s_/bin/zsh更换shell">使用命令<code>chsh -s /bin/zsh</code>更换shell</h2><p>可能会让你输入用户密码<br><br> ok~reboot吧。<br>重启后，zsh算是安装并更换上了，但是没有皮肤，默认的很挫。。。<br>所以，开始安装皮肤</p>
+<h2 id="安装git">安装git</h2><p>皮肤是在git上的，所以我们先安装git<br><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># yum -y install git</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="安装皮肤">安装皮肤</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># git clone git:<span class="comment">//github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="创建zsh配置文件">创建zsh配置文件</h2><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># cp ~<span class="regexp">/.oh-my-zsh/</span>templates<span class="regexp">/zshrc.zsh-template ~/</span>.zshrc</span><br></pre></td></tr></table></figure>
+<h2 id="更改主题">更改主题</h2><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># vi ~/.zshrc</span></span><br></pre></td></tr></table></figure>
+<p>修改<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">ZSH_THEME=<span class="value"><span class="string">"皮肤名称"</span></span></span></span><br></pre></td></tr></table></figure></p>
+<p>主题文件在<code>~/.oh-my-zsh/themes</code>目录下，大家自选。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/bash/">bash</a>, <a href="/tags/oh-my-zsh/">oh-my-zsh</a>, <a href="/tags/shell/">shell</a>, <a href="/tags/zsh/">zsh</a>
+  </div>
+
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">留言</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="http://yoursite.com/2015/12/08/usezsh/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">标签</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/REST/">REST</a><small>1</small></li>
+  
+    <li><a href="/tags/Vagrant/">Vagrant</a><small>1</small></li>
+  
+    <li><a href="/tags/VirtualBox/">VirtualBox</a><small>1</small></li>
+  
+    <li><a href="/tags/api/">api</a><small>1</small></li>
+  
+    <li><a href="/tags/bash/">bash</a><small>1</small></li>
+  
+    <li><a href="/tags/bigdesk/">bigdesk</a><small>1</small></li>
+  
+    <li><a href="/tags/elasticsearch/">elasticsearch</a><small>6</small></li>
+  
+    <li><a href="/tags/git/">git</a><small>1</small></li>
+  
+    <li><a href="/tags/head/">head</a><small>1</small></li>
+  
+    <li><a href="/tags/hexo/">hexo</a><small>1</small></li>
+  
+    <li><a href="/tags/ik/">ik</a><small>2</small></li>
+  
+    <li><a href="/tags/kopf/">kopf</a><small>1</small></li>
+  
+    <li><a href="/tags/nodejs/">nodejs</a><small>1</small></li>
+  
+    <li><a href="/tags/oh-my-zsh/">oh-my-zsh</a><small>1</small></li>
+  
+    <li><a href="/tags/pinyin/">pinyin</a><small>1</small></li>
+  
+    <li><a href="/tags/plugin/">plugin</a><small>4</small></li>
+  
+    <li><a href="/tags/shell/">shell</a><small>1</small></li>
+  
+    <li><a href="/tags/zookeeper/">zookeeper</a><small>1</small></li>
+  
+    <li><a href="/tags/zsh/">zsh</a><small>1</small></li>
+  
+    <li><a href="/tags/分词/">分词</a><small>3</small></li>
+  
+    <li><a href="/tags/开发环境/">开发环境</a><small>1</small></li>
+  
+    <li><a href="/tags/虚拟机/">虚拟机</a><small>1</small></li>
+  
+    <li><a href="/tags/集群/">集群</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 AtomyLiu
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
